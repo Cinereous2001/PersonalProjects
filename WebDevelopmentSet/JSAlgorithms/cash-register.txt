@@ -1,0 +1,182 @@
+// function checkCashRegister(price, cash, cid) {
+//   let val = cid[0][1] + cid[1][1] + cid[2][1] + cid[3][1] + cid[4][1] + cid[5][1] + cid[6][1] + cid[7][1] + cid[8][1];
+//   console.log(converter(val));
+//   let demand = converter(cash - price);
+//   console.log(demand);
+//   let possible = true;
+//   for (let i = 0; i < demand.length; i++) {
+//         if (demand[i][1] > cid[i][1]) {
+//           let sum = 0;
+//           for (let j = i + 1; j < demand.length; j++) {
+//             sum += cid[j][1];
+//           }
+//           if (demand)
+//           return {
+//       status: "INSUFFICIENT_FUNDS", 
+//       change: []};
+//        }
+//         else{ 
+//           if (demand[i][1] !== cid[i][1]) {
+//             possible = false;
+//         }
+//         }
+//   }
+//   if (possible == true) {
+//     return {
+//         status: "CLOSED",
+//         change: cid
+//       };
+//   }
+//   else {
+//     let arr = demand.filter(element => element[1] !== 0)
+//     return {
+//       status: "OPEN",
+//       change: arr
+//   };
+//   }
+  // let totalValue = cid[0][1] + cid[1][1] + cid[2][1] + cid[3][1] + cid[4][1] + cid[5][1] + cid[6][1] + cid[7][1] + cid[8][1];
+  // console.log(totalValue);
+  // let finalObj;
+  // const diff = cash - price;
+  // if (diff > totalValue) {
+  //   return finalObj = {
+  //     status: "INSUFFICIENT_FUNDS", 
+  //     change: []};
+  // }
+  // else if (diff === totalValue) {
+  //     return finalObj = {
+  //       status: "CLOSED",
+  //       change: cid
+  //     };
+  // }
+  // else {
+  //   let arr = converter(diff);
+  //   return finalObj = {
+  //     status: "OPEN",
+  //     change: arr
+  // };
+  // }
+//}
+
+// function checkCashRegister(price, cash, cir) {
+// 	 let totalValue = cir[0][1] + cir[1][1] + cir[2][1] + cir[3][1] + cir[4][1] + cir[5][1] + cir[6][1]
+// 						+ cir[7][1] + cir[8][1];
+// 	let diff = cash - price;
+// 	if (diff === totalValue) {
+// 		return {status: "CLOSED", change: cir};
+//   }
+
+// 	else if (diff > totalValue) {
+// 		return {status: "INSUFFICIENT_FUNDS", change: []};
+//   }
+// 	else {
+// 		diff = converter(diff);
+// 	  cir = converter(totalValue);
+//     console.log(diff);
+//     console.log(cir);
+// 		let status = true;
+// 		for (let i = 0; i < diff.length; i++) {
+// 			if (diff[i][1] > cir[i][1]) {
+// 				status = false;
+// 		}
+// 	}
+// 	if (status == false) {
+// 		return {status: "INSUFFICIENT_FUNDS", change: []};
+// 	}
+// 	else {
+// 		let arr = diff.filter(element => element[1] !== 0)
+// 		return {status: "OPEN", change: arr};
+// 	}
+// }
+// }
+
+function checkCashRegister(price, cash, cir) {
+  let currencyValues = {    
+    "ONE HUNDRED": 10000,
+    "TWENTY": 2000,
+    "TEN": 1000,
+    "FIVE": 500,
+    "ONE": 100,
+    "QUARTER": 25,
+    "DIME": 10,
+    "NICKEL": 5,
+    "PENNY": 1,
+  };
+  let finalArr = [];
+  let change = cash * 100 - price * 100;
+  let unmutableChange = change;
+  let new_cir = cir.filter(element => element[1] !== 0).reverse();
+  let cirTotal = 0;
+  
+  // new_cir.forEach(element => parseInt(element[1]))
+  new_cir.forEach( function (element) {
+    cirTotal += element[1] * 100;
+    let currSum = element[1] * 100;
+    let amount = 0;
+    // console.log(currencyValues[element[0]]);
+    // console.log(element[1]);
+    // console.log(new_cir[element[1]]);
+    while (change >= currencyValues[element[0]] && currSum > 0) {
+        amount += currencyValues[element[0]];
+        change -= currencyValues[element[0]];
+        currSum -= currencyValues[element[0]];
+    }
+    if (amount !== 0) {
+        finalArr.push([element[0], amount / 100]);
+        // console.log(finalArr);
+    }
+  });
+
+  if (change > 0) {
+    return {status: "INSUFFICIENT_FUNDS", change: []};
+  }
+  else if (change == 0 && cirTotal === unmutableChange) {
+     return {
+         status: "CLOSED",
+         change: cir
+  };
+  }
+  else {
+    return {
+      status: "OPEN", change: finalArr
+    };
+  }
+
+}
+
+
+function converter(diff) {
+  let dollars = parseInt(diff);
+  let oneHundredNotes = parseInt(dollars/100);
+  dollars = dollars % 100;
+  let twentyNotes = parseInt(dollars/20);
+  dollars = dollars % 20;
+  let tenNotes = parseInt(dollars/10);
+  dollars = dollars % 10;
+  let fiveNotes = parseInt(dollars/5);
+  dollars = dollars % 5;
+  let oneNotes = parseInt(dollars);
+  let coins = parseInt((diff - parseInt(diff)) * 100);
+  let quarters = parseInt(coins / 25);
+  coins = coins % 25;
+  let dimes = parseInt(coins / 10);
+  coins = coins % 10;
+  let nickels = parseInt(coins / 5);
+  coins = coins % 5;
+  let pennies = parseInt(coins);
+
+
+  return [
+  ["PENNY", pennies * 0.01],
+  ["NICKEL", nickels * 0.05],
+  ["DIME", dimes * 0.1],
+  ["QUARTER", quarters * 0.25],
+  ["ONE", oneNotes],
+  ["FIVE", fiveNotes * 5],
+  ["TEN", tenNotes * 10],
+  ["TWENTY", twentyNotes * 20],
+  ["ONE HUNDRED", oneHundredNotes * 100]
+];
+  }
+
+console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));

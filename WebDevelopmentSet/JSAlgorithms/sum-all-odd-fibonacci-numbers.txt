@@ -1,0 +1,35 @@
+function sumFibs(num) {
+  let arr = fibonacciGenerator(num);
+  let sum  = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 == 1) {
+      sum = sum + arr[i];
+    }
+  }
+  return sum;
+}
+
+function fibonacciGenerator(num) {
+  let arr = [];
+  let initialValue = 1;
+  let secondValue = 1;
+  if (num == 0) {
+    return arr;
+  }
+  else if (num == 1) {
+    return arr.push(1);
+  }
+  else {
+  arr.push(initialValue);
+  //arr.push(secondValue);
+  while (secondValue <= num) {
+    let temp = secondValue;
+    secondValue = secondValue + initialValue;
+    initialValue = temp;
+    arr.push(initialValue);
+  }
+  return arr;
+  }
+}
+console.log(sumFibs(75025));
+// console.log(fibonacciGenerator(10));

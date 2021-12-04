@@ -1,0 +1,22 @@
+function smallestCommons(arr) {
+  arr = arr.sort((a,b) =>
+    a === b? 0: a > b? 1 : -1
+  );
+  let found = false;
+  let multiple = 0;
+  let count = 1;
+  while (found == false) {
+      found = true;
+      multiple = arr[1] * count;
+      for (let i = arr[0]; i < arr[1]; i++) {
+        if (multiple % i != 0) {
+          count++;
+          found = false;
+          break;
+        }
+    }
+  }
+  return multiple;
+}
+
+console.log(smallestCommons([2, 10]));

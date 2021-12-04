@@ -1,0 +1,43 @@
+function telephoneCheck(str) {
+  if (str.charAt(0) === "1") {
+    if (str.charAt(1) === " ") {
+      str = str.substring(2, str.length);
+      console.log(str);
+    }
+    else {
+      str = str.substring(1, str.length);
+    }
+  }
+  if (str.length === 12) {
+  let regex1 = /\d{3}-\d{3}-\d{4}/;
+  let regex2 = /\d{3}\s\d{3}\s\d{4}/
+  if (regex1.test(str)) {
+    return true;
+  }
+  if (regex2.test(str)) {
+    return true;
+  }
+  }
+  else if (str.length == 10) {
+    let regex = /\d{10}/;
+    if (regex.test(str)) {
+    return true;
+  }
+  }
+  else if (str.length == 14 || str.length == 13) {
+    // let regex1 = /^1\s\d{3}\s\d{3}\s\d{4}/;
+    let regex2 = /^[(]\d{3}[)]\s?\d{3}-\d{4}/;
+    // let regex3 = /^(\d{3})\s\d{3}-\d{4}/;
+
+  //   if (regex1.test(str)) {
+  //   return true;
+  // }
+  if (regex2.test(str)) {
+    return true;
+  }
+ 
+  }
+  return false;
+}
+
+console.log(telephoneCheck("1 555 555 5555"));

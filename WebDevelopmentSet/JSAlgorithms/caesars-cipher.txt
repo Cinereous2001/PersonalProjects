@@ -1,0 +1,23 @@
+function rot13(str) {
+  let newStr = "";
+  let arr = [];
+  let regex = /[A-Z]/;
+  console.log('Z'.charCodeAt(0));
+  for (let i = 0; i < str.length; i++) {
+    arr.push(str.charAt(i));
+    if (regex.test(str.charAt(i))) {
+      let num = str.charAt(i).charCodeAt(0);
+      let newNum = num - 13;
+      if (newNum < 65) {
+        let diff = 65 - newNum;
+        newNum = 90 - diff + 1;
+      }
+      console.log(String.fromCharCode(newNum));
+      arr[i] = String.fromCharCode(newNum);
+    }
+  newStr = arr.reduce( (prev, current) => prev + current);
+  }
+  return newStr;
+}
+
+console.log(rot13("SE"));

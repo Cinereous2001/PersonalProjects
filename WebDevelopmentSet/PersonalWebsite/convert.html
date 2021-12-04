@@ -1,0 +1,72 @@
+<!-- Mahir Rahman
+Unique ID: rahmanm7
+3 November 2021
+CSE 102
+
+Lab 8 Assignment
+Web Page: convert.html
+Style Sheet: styleme.css -->
+
+<!doctype html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title> Miles to Kilometers</title>
+		
+		<link rel = "stylesheet" type = "text/css" href = "styleme.css" />
+		<script> 
+		function HomePage() {
+			document.location.href = "index.html";
+		}
+		function ClassesPage() {
+			document.location.href = "classes.html";
+		}
+		function FavoritesPage() {
+			document.location.href = "favorites.html";
+		}
+		function MoodsPage() {
+			document.location.href = "moods.html";
+		}
+		function FamilyPage() {
+			document.location.href = "family.html";
+		}
+		function ProgramsPage() {
+			document.location.href = "programs.html";
+		}
+		function BackgroundColor() {
+			document.body.style.background = "lightblue";
+		}
+		</script>
+	</head>
+
+	<body>
+	
+	<button onclick = "HomePage()">Home </button>
+	<button onclick = "ClassesPage()"> Classes </button>
+	<button onclick = "FavoritesPage()"> Favorites </button>
+	<button onclick = "MoodsPage()"> Moods </button>
+	<button onclick = "FamilyPage()"> Family </button>
+	<button onclick = "ProgramsPage()">Programs </button>
+	<hr>
+	
+	<h2> Miles to Kilometers Conversion Page </h2>
+	<hr>
+	<p>
+	Enter the distance in miles: 
+	<input type = "text" id = "mileBox" size = "10" value = ""/>
+	</p>
+	<p>
+	<input type = "button" value = "Convert to Kilometers" onclick = "miles = document.getElementById('mileBox').value;
+		miles = parseFloat(miles);
+		kilo = miles * 1.609;
+		document.getElementById('kiloBox').value = kilo;" />
+	</p>
+	<p>
+		Equivalent distance in Kilometers:
+		<input type="text" id="kiloBox" size="10" value=""/>
+		</p>
+		
+		<hr>
+		<button onclick="BackgroundColor()">Change Background Color</button>
+	</body>
+</html>

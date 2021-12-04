@@ -1,0 +1,66 @@
+<!-- Mahir Rahman
+Unique ID: rahmanm7
+27 October 2021
+CSE 102
+
+Lab 8 Assignment
+Web Page: moods.html
+Style Sheet: styleme.css-->
+
+<!doctype html>
+
+<html>
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "styleme.css"/>
+		<title> My Moods </title>
+		<script>
+		function HomePage() {
+			document.location.href = "index.html";
+		}
+		function ClassesPage() {
+			document.location.href = "classes.html";
+		}
+		function FavoritesPage() {
+			document.location.href = "favorites.html";
+		}
+		function MoodsPage() {
+			document.location.href = "moods.html";
+		}
+		function FamilyPage() {
+			document.location.href = "family.html";
+		}function ProgramsPage() {
+			document.location.href = "programs.html";
+		}
+		function BackgroundColor() {
+			document.body.style.background = "lightgreen";
+		}
+		</script>
+	</head>
+	
+		<body>
+	
+	<button onclick = "HomePage()">Home </button>
+	<button onclick = "ClassesPage()"> Classes </button>
+	<button onclick = "FavoritesPage()"> Favorites </button>
+	<button onclick = "MoodsPage()"> Moods </button>
+	<button onclick = "FamilyPage()"> Family </button>
+	<button onclick = "ProgramsPage()" > Programs </button>
+	
+	<hr>
+	<h1> My Mood</h1>
+		<table>
+		<tr> 
+		<td> When I finally get a free weekend: </td>
+		<td> When my code does not compile: </td>
+		</tr>
+		<tr>
+		<td> <img src = "plush.jpg" width = 50% height = 50%> </td>
+		<td> <img src = "plush2.jpeg" width = 50% height = 50%> </td>
+		</tr>
+		</table>
+		
+		<hr>
+		
+		<button onclick = "BackgroundColor()"> Change Background Color </button>
+	</body>
+</html>

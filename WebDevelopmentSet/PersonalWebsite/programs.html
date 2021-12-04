@@ -1,0 +1,57 @@
+<!-- Mahir Rahman
+Unique ID: rahmanm7
+3 November 2021
+CSE 102
+
+Lab 9 Assignment
+Web Page: programs.html
+Style Sheet: styleme.css-->
+
+<!doctype html>
+
+<html>
+	<head>
+	<script src = "MyJs.js">
+	</script>
+		<link rel = "stylesheet" type = "text/css" href = "styleme.css"/>
+		<title> Programs </title>
+		<script>
+		
+		function FavoritesPage() {
+			document.location.href = "favorites.html";
+		}
+		function MoodsPage() {
+			document.location.href = "moods.html";
+		}
+		function FamilyPage() {
+			document.location.href = "family.html";
+		}
+		function ProgramsPage() {
+			document.location.href = "programs.html";
+		}
+		function BackgroundColor() {
+			document.body.style.background = "lightyellow";
+		}
+		</script>
+	</head>
+	
+	<body>
+	
+	<button onclick = "HomePage()">Home </button>
+	<button onclick = "ClassesPage()"> Classes </button>
+	<button onclick = "FavoritesPage()"> Favorites </button>
+	<button onclick = "MoodsPage()"> Moods </button>
+	<button onclick = "FamilyPage()"> Family </button>
+	<button onclick = "ProgramsPage()" > Programs </button>
+	
+	
+        <h1> Mahir Rahman's Programs </h1>
+            <ol type="I">
+            <li> <a href="convert.html">Convert Miles to Kilometers</a></li>
+            <li> <a href="even_odd.html">Check if a number is even or odd</a> </li>
+            </ol>
+
+        <button onclick="BackgroundColor()">Change Background Color</button>
+
+    </body>
+</html>

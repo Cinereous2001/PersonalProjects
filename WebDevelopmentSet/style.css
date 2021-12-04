@@ -1,0 +1,87 @@
+body {
+  font-family: Helvetica;
+  color: white;
+  background: linear-gradient(45deg,
+  rgb(214, 138, 89), white);
+  
+    
+
+}
+
+main {
+  background: #4682B4;
+  border-radius: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+  position: relative;
+  top: 20px;
+  font-family: Helvetica;
+}
+
+h2 {
+  text-align: center;
+}
+
+#description {
+  text-align: center;
+  position: relative;
+  bottom: 15px;
+}
+
+#session {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 20px;
+  position: relative;
+  bottom: 25px;
+}
+
+#survey-form {
+  margin-left: 20px;
+  position: relative;
+  bottom: 25px;
+  
+}
+.box-set {
+  width: 90%;
+  height: 2.2em;
+}
+
+.title1 {
+  text-align: left;
+  margin-left: 5%;
+  position: relative;
+  top: 15px;
+}
+
+#spacing {
+  line-height: 200%;
+}
+
+#textarea {
+  height: 100px;
+  padding-top: 10px;
+  margin-left: 10px;
+}
+
+#submit {
+  margin-top: 30px;
+  background: rgb(214, 138, 89);
+  width: 93%;
+  border-radius: 10px;
+  height: 50px;
+  font-weight: bold;
+}
+#submit:hover {
+  cursor: pointer;
+  background: #db7a3b;
+}
+::placeholder {
+  font-family: Helvetica;
+}

@@ -1,0 +1,75 @@
+<!-- I created an election form for my club EWB to help make the process completed online -->
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title> Survey Form </title>
+</head>
+<div id = "gh">
+<main>
+<h1 id = "title"> Engineers Without Borders </h1>
+
+<h2 id = "sub-title"> <u>LT Leadership Form </u> </h2>
+
+<p id = "description"> Please fill out this form to run for an LT position this </p>
+<p id = "session"> Spring 2022! </p>
+
+<form id = "survey-form">
+  <label for = "name-label">
+    <p class = "title1"> Name </p>
+    <input class = "box-set" id = "name" name = "name-label" placeholder = "Enter your name" required>
+  </label>
+  <p class = "title1"> Email </p>
+  <label for = "email-label">
+    <input class = "box-set" id = "email" name = "email-label" placeholder = "Enter your email address" required>
+  </label>
+   <label for = "number-label">
+     <p class = "title1"> Age (Optional) </p>
+     <input class = "box-set" id = "age" type = "number" min = "0" max = "200" name = "number-label" placeholder = "Age" step = "1">
+  </label> <br>
+       <label for = "dropdown-label"> 
+         <p class = "title1"> Which option best describes your current role?</p> </label>
+       <select class = "box-set" name = "dropdown-label" id = "dropdown">
+         <option value = ""> Current Role</option>
+         <option value = "Member"> Member </option>
+         <option value = "Operations Chair"> Operations Chair </option>
+         <option value = "Project Leader"> Project Leader </option>
+         <option value = "Vice-President"> Vice-President </option>
+         <option value = "President"> President </option>
+         </select>
+  
+    <p class = "title1"> Which position would you like to apply for? </p> 
+  <label for = "president">
+  <p class = "title1"> <input id = "president" name = "radio-buttons" type = "radio"> President </p> </label>
+  <label for = "vice-president">
+    <p class = "title1"> <input id = "vice-president" name = "radio-buttons" type = "radio"> Vice-President </p> </label>
+  <label for = "project-leader">
+    <p class = "title1"> <input id = "project-leader" name = "radio-buttons" type = "radio"> Project Leader </p> </label>
+  <label for = "operations-chair">
+    <p class = "title1"> <input id = "operations-chair" name = "radio-buttons" type = "radio"> Operations Chair </p> </label>
+  
+  <p id = "spacing" class = "title1"> How would you describe yourself? <br> 
+  <label for = "prudent">
+    <input id = "prudent" value = "prudent" type = "checkbox">
+    Prudent <br> 
+    </label>
+    <label for = "diligent">
+    <input id = "diligent" value = "diligent" type = "checkbox">
+    Diligent <br> 
+    </label>
+    <label for = "hard-working">
+    <input id = "hard-working" value = "hard-working" type = "checkbox">
+    Hard-working <br>
+    </label>
+  
+    </p>
+  
+  <p class = "title1"> Provide a short description of your time at EWB: </p>
+  <label for = "textarea">
+    <textarea placeholder = "Start here..." class = "box-set" id = "textarea" rows = "8" maxlength = "200"></textarea>
+  </label>
+  <label for = "submit">
+    <button id = "submit" type = "submit"> Submit </button>
+  </label>
+  
+  </form>
+</main>
+  </div>

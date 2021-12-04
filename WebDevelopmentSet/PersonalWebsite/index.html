@@ -1,0 +1,79 @@
+<!-- Mahir Rahman
+Unique ID: rahmanm7
+27 October 2021
+CSE 102
+
+Lab 8 Assignment
+Web Page: index.html
+Style Sheet: styleme.css -->
+
+<!doctype html>
+<html>
+	<head>
+		<title> About me </title>
+		<link rel = "stylesheet" type = "text/css" href = "styleme.css" />
+		<script>
+		function HomePage() {
+			document.location.href = "index.html";
+		}
+		function ClassesPage() {
+			document.location.href = "classes.html";
+		}
+		function FavoritesPage() {
+			document.location.href = "favorites.html";
+		}
+		function MoodPage() {
+			document.location.href = "moods.html";
+		}
+		function FamilyPage() {
+			document.location.href = "family.html";
+		}
+		function ProgramsPage() {
+			document.location.href = "programs.html";
+		}
+		function ColorChange() {
+			document.body.style.background = "pink";
+		}
+		</script>
+		
+		<style>
+		div {
+			width: 1000px;
+			margin: 0px 100px 10px;
+		}
+		</style>
+	</head>
+	
+	<body>
+		<button onclick = "HomePage()"> Home </button>
+		<button onclick = "ClassesPage()"> Classes </button>
+		<button onclick = "FavoritesPage()"> Favorites </button>
+		<button onclick = "MoodPage()" > Moods </button>
+		<button onclick = "FamilyPage()"> Family </button>
+		<button onclick = "ProgramsPage()" > Programs </button>
+		<hr>
+		
+		<h1> Mahir Rahman </h1>
+		<img src="MahirRahman.JPG" width="20%" height="18%" align="left" hspace="100" vspace="0">
+		<div>
+		<p> I am a self-driven problem solver trying to gain experience in and outside the field of Computer Science.
+		With this experience, I hope to incorporate technological advancements in improving the lives of the people around us.
+		I find meaning in the work I do when it positively impacts different communities.</p>
+		
+		<p> My past experience as a Digital Technology Intern at Ahmed Amin Group and Teaching Assistant has helped me develop a strong work ethic and familiarity to the workplace setting. 
+		In addition, I strive to be a responsible leader and communicator while working with international NGOs like Engineers Without Borders and University Councils such as the CSE Student Leadership Council. 
+		I always pay attention to details and prioritize quality and efficiency in my work.
+		With my experience and strong background in technologies such as Python, JAVA, C++, and Office, I hope to be a valuable asset for companies.
+		</p>
+		
+		</div>
+		<br>
+
+		<hr>
+		<button onclick="ColorChange()">Change Background Color</button>
+	</body>
+</html>
+		
+		
+			
+		
